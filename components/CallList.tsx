@@ -68,7 +68,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
       {calls && calls.length > 0 ? (
         calls.map((meeting: Call | CallRecording) => (
           <MeetingCard
-            key={(meeting as Call).id}
+            key={(meeting as Call).id || (meeting as CallRecording).url}
             icon={
               type === 'ended'
                 ? '/icons/previous.svg'
@@ -97,6 +97,13 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
               type === 'recordings'
                 ? () => router.push(`${(meeting as CallRecording).url}`)
                 : () => router.push(`/meeting/${(meeting as Call).id}`)
+            }
+            guestImageUrls={
+              type === 'ended'
+                ? (meeting as Call).state?.members
+                  ?.map((member) => member.user.image)
+                  .filter((img): img is string => !!img)
+                : undefined
             }
           />
         ))

@@ -34,6 +34,7 @@ const MeetingSetup = ({
 
     // https://getstream.io/video/docs/react/ui-cookbook/replacing-call-controls/
     const [isMicCamToggled, setIsMicCamToggled] = useState(false);
+    const [callError, setCallError] = useState('');
 
     useEffect(() => {
         if (isMicCamToggled) {
@@ -41,10 +42,16 @@ const MeetingSetup = ({
             call?.microphone.disable();
         } else {
             call?.camera.enable().catch((err) => {
-                console.warn("Retrying camera enable due to:", err);
+                if (err.name === 'NotAllowedError') {
+                    setCallError('Please enable camera and microphone permissions in your browser settings to join the meeting.');
+                }
+                console.error("Camera enable failed:", err);
             });
             call?.microphone.enable().catch((err) => {
-                console.warn("Retrying mic enable due to:", err);
+                if (err.name === 'NotAllowedError') {
+                    setCallError('Please enable camera and microphone permissions in your browser settings to join the meeting.');
+                }
+                console.error("Microphone enable failed:", err);
             });
         }
     }, [isMicCamToggled, call?.camera, call?.microphone]);
@@ -56,6 +63,22 @@ const MeetingSetup = ({
                     Your Meeting has not started yet. It is scheduled for {callStartsAt.toLocaleString()}
                 </AlertTitle>
             </Alert>
+        );
+
+    if (callError)
+        return (
+            <div className="flex h-screen w-full flex-col items-center justify-center gap-3 text-white bg-[#1c1f2e]">
+                <Alert className="max-w-[500px] bg-red-600 border-none">
+                    <AlertTitle className="text-xl font-bold mb-2">Permission Denied</AlertTitle>
+                    <p className="text-base">{callError}</p>
+                    <Button
+                        className="mt-4 bg-white text-black hover:bg-gray-200"
+                        onClick={() => window.location.reload()}
+                    >
+                        Try Again
+                    </Button>
+                </Alert>
+            </div>
         );
 
     if (callHasEnded)

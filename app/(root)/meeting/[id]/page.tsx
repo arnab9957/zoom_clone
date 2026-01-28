@@ -6,9 +6,9 @@ import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
 import { useParams } from 'next/navigation';
 import { Loader } from 'lucide-react';
 
-import { useGetCallById } from '@/hooks/useGetCallById'; 
+import { useGetCallById } from '@/hooks/useGetCallById';
 import { Alert } from '@/components/ui/alert';
-import MeetingSetup from '@/components/MeeetingSetup';
+import MeetingSetup from '@/components/MeetingSetup';
 import MeetingRoom from '@/components/MeetingRoom';
 
 const MeetingPage = () => {
@@ -35,11 +35,11 @@ const MeetingPage = () => {
       <StreamCall call={call}>
         <StreamTheme>
 
-        {!isSetupComplete ? (
-          <MeetingSetup setIsSetupComplete={setIsSetupComplete} />
-        ) : (
-          <MeetingRoom />
-        )}
+          {!isSetupComplete ? (
+            <MeetingSetup setIsSetupComplete={setIsSetupComplete} />
+          ) : (
+            <MeetingRoom />
+          )}
         </StreamTheme>
       </StreamCall>
     </main>

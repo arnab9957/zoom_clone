@@ -24,6 +24,11 @@ export const sidebarLinks = [
         route: '/personal-room',
         label: 'Personal Room',
     },
+    {
+        imgURL: '/icons/user.svg',
+        route: '/profile',
+        label: 'Profile',
+    },
 ];
 
 export const avatarImages = [

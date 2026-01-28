@@ -16,6 +16,7 @@ interface MeetingCardProps {
   buttonText?: string;
   handleClick: () => void;
   link: string;
+  guestImageUrls?: string[];
 }
 
 const MeetingCard = ({
@@ -27,6 +28,7 @@ const MeetingCard = ({
   handleClick,
   link,
   buttonText,
+  guestImageUrls,
 }: MeetingCardProps) => {
   const { toast } = useToast();
 
@@ -43,20 +45,43 @@ const MeetingCard = ({
       </article>
       <article className={cn("flex justify-center relative", {})}>
         <div className="relative flex w-full max-sm:hidden">
-          {avatarImages.map((img, index) => (
-            <Image
-              key={index}
-              src={img}
-              alt="attendees"
-              width={40}
-              height={40}
-              className={cn("rounded-full", { absolute: index > 0 })}
-              style={{ top: 0, left: index * 28 }}
-            />
-          ))}
-          <div className="flex-center absolute left-[136px] size-10 rounded-full border-[5px] border-dark-3 bg-dark-4">
-            +5
-          </div>
+          {guestImageUrls ? (
+            <>
+              {guestImageUrls.slice(0, 5).map((img, index) => (
+                <Image
+                  key={index}
+                  src={img}
+                  alt="attendees"
+                  width={40}
+                  height={40}
+                  className={cn("rounded-full", { absolute: index > 0 })}
+                  style={{ top: 0, left: index * 28 }}
+                />
+              ))}
+              {guestImageUrls.length > 5 && (
+                <div className="flex-center absolute left-[136px] size-10 rounded-full border-[5px] border-dark-3 bg-dark-4">
+                  +{guestImageUrls.length - 5}
+                </div>
+              )}
+            </>
+          ) : (
+            avatarImages.map((img, index) => (
+              <Image
+                key={index}
+                src={img}
+                alt="attendees"
+                width={40}
+                height={40}
+                className={cn("rounded-full", { absolute: index > 0 })}
+                style={{ top: 0, left: index * 28 }}
+              />
+            ))
+          )}
+          {!guestImageUrls && (
+            <div className="flex-center absolute left-[136px] size-10 rounded-full border-[5px] border-dark-3 bg-dark-4">
+              +5
+            </div>
+          )}
         </div>
         {!isPreviousMeeting && (
           <div className="flex gap-2">

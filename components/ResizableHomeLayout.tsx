@@ -10,7 +10,7 @@ const ResizableHomeLayout = ({ children }: { children: ReactNode }) => {
 
     if (isMobile) {
         return (
-            <div className="flex min-h-screen flex-1 flex-col bg-hero bg-cover bg-fixed bg-center bg-no-repeat px-6 pb-6 pt-28 max-md:pb-14 sm:px-14">
+            <div className="flex min-h-screen flex-1 flex-col bg-hero bg-cover bg-fixed bg-center bg-no-repeat px-6 pb-6 pt-24 max-md:pb-14 sm:px-14">
                 <div className="w-full">{children}</div>
             </div>
         );

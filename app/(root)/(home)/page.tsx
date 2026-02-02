@@ -11,7 +11,7 @@ const Home = () => {
   const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);
 
   return (
-    <section className="flex size-full flex-col gap-5 text-white">
+    <section className="flex size-auto flex-col gap-5 text-white">
       {/* Top Section with Background */}
       {/* Top Section */}
       <div className="flex flex-col gap-5 rounded-[20px] px-5 py-8 lg:p-11">

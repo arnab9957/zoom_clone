@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
 import { useParams } from 'next/navigation';
@@ -16,6 +16,13 @@ const MeetingPage = () => {
   const { isLoaded, user } = useUser();
   const { call, isCallLoading } = useGetCallById(id as string);
   const [isSetupComplete, setIsSetupComplete] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      call?.camera.disable();
+      call?.microphone.disable();
+    };
+  }, [call]);
 
   if (!isLoaded || isCallLoading) return <Loader />;
 

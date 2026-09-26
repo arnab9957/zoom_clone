@@ -162,3 +162,144 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
+
+/* Stitch Generated Theme Variables */
+@theme {
+  --color-on-tertiary-fixed: #410004;
+  --color-surface-container-lowest: #0b0e18;
+  --color-on-secondary-container: #00311f;
+  --color-inverse-primary: #494bd6;
+  --color-on-primary-fixed-variant: #2f2ebe;
+  --color-on-secondary: #003824;
+  --color-inverse-on-surface: #2d303b;
+  --color-surface-container-highest: #32343f;
+  --color-tertiary: #ffb3ad;
+  --color-on-primary-fixed: #07006c;
+  --color-on-error: #690005;
+  --color-tertiary-fixed-dim: #ffb3ad;
+  --color-error-container: #93000a;
+  --color-on-secondary-fixed-variant: #005236;
+  --color-surface-bright: #363944;
+  --color-primary-fixed-dim: #c0c1ff;
+  --color-background: #10131d;
+  --color-surface-variant: #32343f;
+  --color-tertiary-container: #ff5451;
+  --color-on-background: #e0e2f0;
+  --color-inverse-surface: #e0e2f0;
+  --color-primary: #c0c1ff;
+  --color-surface-tint: #c0c1ff;
+  --color-on-surface: #e0e2f0;
+  --color-surface-dim: #10131d;
+  --color-primary-container: #8083ff;
+  --color-surface-container-high: #272a34;
+  --color-on-primary-container: #0d0096;
+  --color-on-primary: #1000a9;
+  --color-secondary-container: #00a572;
+  --color-on-surface-variant: #c7c4d7;
+  --color-tertiary-fixed: #ffdad7;
+  --color-secondary: #4edea3;
+  --color-surface-container-low: #181b25;
+  --color-secondary-fixed-dim: #4edea3;
+  --color-on-tertiary-container: #5c0008;
+  --color-surface: #10131d;
+  --color-secondary-fixed: #6ffbbe;
+  --color-outline-variant: #464554;
+  --color-outline: #908fa0;
+  --color-on-error-container: #ffdad6;
+  --color-on-secondary-fixed: #002113;
+  --color-primary-fixed: #e1e0ff;
+  --color-error: #ffb4ab;
+  --color-on-tertiary: #68000a;
+  --color-surface-container: #1c1f2a;
+  --color-on-tertiary-fixed-variant: #930013;
+  --font-label-md: Inter;
+  --font-display-lg: Inter;
+  --font-headline-lg: Inter;
+  --font-title-md: Inter;
+  --font-body-md: Inter;
+  --font-headline-md: Inter;
+  --font-label-sm: Inter;
+  --font-body-lg: Inter;
+  --font-headline-sm: Inter;
+  --font-body-sm: Inter;
+  --font-label-lg: Inter;
+  --font-headline-lg-mobile: Inter;
+}
+
+@layer utilities {
+  .text-label-md { font-size: 0.75rem; line-height: 1rem; font-weight: 500; letter-spacing: 0.02em; }
+  .font-label-md { font-weight: 500; }
+  .text-display-lg { font-size: 3rem; line-height: 3.5rem; font-weight: 700; letter-spacing: -0.03em; }
+  .font-display-lg { font-weight: 700; }
+  .text-headline-lg { font-size: 2rem; line-height: 2.5rem; font-weight: 600; letter-spacing: -0.025em; }
+  .font-headline-lg { font-weight: 600; }
+  .text-title-md { font-size: 1rem; line-height: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }
+  .font-title-md { font-weight: 600; }
+  .text-body-md { font-size: 0.875rem; line-height: 1.375rem; font-weight: 400; letter-spacing: normal; }
+  .font-body-md { font-weight: 400; }
+  .text-headline-md { font-size: 1.5rem; line-height: 2rem; font-weight: 600; letter-spacing: -0.02em; }
+  .font-headline-md { font-weight: 600; }
+  .text-label-sm { font-size: 0.6875rem; line-height: 0.875rem; font-weight: 600; letter-spacing: 0.04em; }
+  .font-label-sm { font-weight: 600; }
+  .text-body-lg { font-size: 1.125rem; line-height: 1.75rem; font-weight: 400; letter-spacing: normal; }
+  .font-body-lg { font-weight: 400; }
+  .text-headline-sm { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; letter-spacing: -0.015em; }
+  .font-headline-sm { font-weight: 600; }
+  .text-body-sm { font-size: 0.75rem; line-height: 1.125rem; font-weight: 400; letter-spacing: normal; }
+  .font-body-sm { font-weight: 400; }
+  .text-label-lg { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; letter-spacing: 0.01em; }
+  .font-label-lg { font-weight: 500; }
+  .text-headline-lg-mobile { font-size: 1.5rem; line-height: 2rem; font-weight: 600; letter-spacing: -0.02em; }
+  .font-headline-lg-mobile { font-weight: 600; }
+}
+
+/* Deep night city bokeh ambiance */
+.dashboard-bg {
+  background: radial-gradient(circle at 75% 30%, rgba(131, 14, 249, 0.28) 0%, transparent 45%),
+              radial-gradient(circle at 20% 40%, rgba(255, 116, 46, 0.22) 0%, transparent 40%),
+              radial-gradient(circle at 50% 80%, rgba(14, 120, 249, 0.25) 0%, transparent 50%),
+              linear-gradient(180deg, #090c15 0%, #0d1222 50%, #080a10 100%);
+  background-attachment: fixed;
+}
+
+/* Bokeh and shimmer night lights simulation */
+.bokeh-layer {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 40px 70px, rgba(255,200,120,0.8), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(4px 4px at 160px 120px, rgba(255,140,80,0.7), rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 230px 60px, rgba(140,180,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(5px 5px at 310px 150px, rgba(255,180,100,0.6), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 350px 250px;
+}
+
+.glass-panel {
+  background: rgba(18, 24, 41, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-input {
+  background: rgba(12, 17, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.action-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+@theme {
+  --color-brand-orange: #FF742E;
+  --color-brand-blue: #0E78F9;
+  --color-brand-purple: #830EF9;
+  --color-brand-amber: #F9A826;
+  --color-brand-dark: #0e1117;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}

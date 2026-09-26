@@ -41,3 +41,11 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+.neon
+
+# drizzle
+.drizzle/
+drizzle/
+neon
+.agents
+

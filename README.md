@@ -112,3 +112,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+- Follow standedred  Rules
+- First analyze the repo
